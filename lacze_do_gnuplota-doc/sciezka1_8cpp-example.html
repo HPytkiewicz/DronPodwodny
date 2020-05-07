@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Łącze do GNUPlota: sciezka1.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Łącze do GNUPlota
+   &#160;<span id="projectnumber">0.1.1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.8.13 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',false,false,'search.php','Szukaj');
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('sciezka1_8cpp-example.html','');});
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle">
+<div class="title">sciezka1.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<p>Zawiera przykład rysowania przeszkód symbolizowanych poprzez koła. Demonstruje również możliwość przemieszczania obiektu w postaci robota i rysowanie jego ścieżki. </p><div class="image">
+<img src="przyklad-sciezka1-500x321.png" alt="przyklad-sciezka1-500x321.png"/>
+<div class="caption">
+Zrzut ekranu pokazujący wynik działania programu.</div></div>
+<p> Przykładowa zawartość pliku: "dat/cel.xyr" </p><pre class="fragment">    70 70 2
+</pre><p>Przykładowa zawartość pliku: "dat/start.xyr" </p><pre class="fragment">    10 10 3
+</pre><p>Przykładowa zawartość pliku: "dat/robot.xyr" </p><pre class="fragment">    37 25 5
+</pre><p>Przykładowa zawartość pliku: "dat/przeszkody.xyr" </p><pre class="fragment">    10 20 3
+    30 40 4
+    14 25 6
+    25 30 2
+</pre><p>Przykładowa zawartość pliku: "dat/sciezka.xy" </p><pre class="fragment">    10 10
+    25 12
+    37 25
+</pre><p>Kod programu:</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div><div class="line"><span class="preprocessor">#include &lt;iomanip&gt;</span></div><div class="line"><span class="preprocessor">#include &lt;fstream&gt;</span></div><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="lacze__do__gnuplota_8hh.html">lacze_do_gnuplota.hh</a>&quot;</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespacestd.html">std</a>;</div><div class="line"></div><div class="line"></div><div class="line"><span class="preprocessor">#define PLIK_SCIEZKI   &quot;dat/sciezka.xy&quot;</span></div><div class="line"><span class="preprocessor">#define PLIK_ROBOTA    &quot;dat/robot.xyr&quot;</span></div><div class="line"><span class="preprocessor">#define PLIK_STARTU    &quot;dat/start.xyr&quot;</span></div><div class="line"><span class="preprocessor">#define ROZM_STARTU    3</span></div><div class="line"><span class="preprocessor">#define ROZM_ROBOTA    5</span></div><div class="line"></div><div class="line"><span class="preprocessor">#define X0     10</span></div><div class="line"><span class="preprocessor">#define Y0     10</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="keywordtype">void</span> ZainicjalizujStanPoczatkowy()</div><div class="line">{</div><div class="line">  ofstream  StrmWy;</div><div class="line"></div><div class="line">  StrmWy.open(PLIK_STARTU);</div><div class="line">  StrmWy &lt;&lt; X0 &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; Y0 &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; ROZM_STARTU &lt;&lt; endl;</div><div class="line">  StrmWy.close();</div><div class="line"></div><div class="line">  StrmWy.open(PLIK_SCIEZKI);</div><div class="line">  StrmWy &lt;&lt; X0 &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; Y0 &lt;&lt; endl;</div><div class="line">  StrmWy.close();</div><div class="line"></div><div class="line">  StrmWy.open(PLIK_ROBOTA);</div><div class="line">  StrmWy &lt;&lt; X0 &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; Y0 &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; ROZM_ROBOTA &lt;&lt; endl;</div><div class="line">  StrmWy.close();</div><div class="line">}</div><div class="line"></div><div class="line"><span class="preprocessor">#define X1    25</span></div><div class="line"><span class="preprocessor">#define Y1    12</span></div><div class="line"><span class="keywordtype">void</span> UtworzSciezke1()</div><div class="line">{</div><div class="line">  ofstream  StrmWy;</div><div class="line"></div><div class="line">  StrmWy.open(PLIK_SCIEZKI,ios::app);</div><div class="line">  StrmWy &lt;&lt; X1 &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; Y1 &lt;&lt; endl;</div><div class="line">  StrmWy.close();</div><div class="line"></div><div class="line">  StrmWy.open(PLIK_ROBOTA);</div><div class="line">  StrmWy &lt;&lt; X1 &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; Y1 &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; ROZM_ROBOTA &lt;&lt; endl;</div><div class="line">  StrmWy.close();</div><div class="line">}</div><div class="line"></div><div class="line"></div><div class="line"><span class="preprocessor">#define X2    37</span></div><div class="line"><span class="preprocessor">#define Y2    25</span></div><div class="line"><span class="keywordtype">void</span> UtworzSciezke2()</div><div class="line">{</div><div class="line">  ofstream  StrmWy;</div><div class="line"></div><div class="line">  StrmWy.open(PLIK_SCIEZKI,ios::app);</div><div class="line">  StrmWy &lt;&lt; X2 &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; Y2 &lt;&lt; endl;</div><div class="line">  StrmWy.close();</div><div class="line"></div><div class="line">  StrmWy.open(PLIK_ROBOTA);</div><div class="line">  StrmWy &lt;&lt; X2 &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; Y2 &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; ROZM_ROBOTA &lt;&lt; endl;</div><div class="line">  StrmWy.close();</div><div class="line">}</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"><span class="keywordtype">int</span> main() </div><div class="line">{</div><div class="line">  <span class="keywordtype">char</span>  Opcja;</div><div class="line">  <a name="_a0"></a><a class="code" href="classPzG_1_1LaczeDoGNUPlota.html">PzG::LaczeDoGNUPlota</a>  Lacze;</div><div class="line"></div><div class="line"></div><div class="line">  Lacze.<a name="a1"></a><a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#a963eeeba41fea78ad1ad107baf8d4b36">DodajNazwePliku_PunktyRoznejWielkosci</a>(<span class="stringliteral">&quot;dat/przeszkody.xyr&quot;</span>);</div><div class="line"></div><div class="line">  Lacze.<a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#a963eeeba41fea78ad1ad107baf8d4b36">DodajNazwePliku_PunktyRoznejWielkosci</a>(<span class="stringliteral">&quot;dat/start.xyr&quot;</span>).</div><div class="line">      ZmienEtykiete(<span class="stringliteral">&quot;Start&quot;</span>);</div><div class="line"></div><div class="line">  Lacze.<a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#a963eeeba41fea78ad1ad107baf8d4b36">DodajNazwePliku_PunktyRoznejWielkosci</a>(<span class="stringliteral">&quot;dat/cel.xyr&quot;</span>).</div><div class="line">      ZmienEtykiete(<span class="stringliteral">&quot;Cel&quot;</span>);</div><div class="line"></div><div class="line">  Lacze.<a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#a963eeeba41fea78ad1ad107baf8d4b36">DodajNazwePliku_PunktyRoznejWielkosci</a>(<span class="stringliteral">&quot;dat/robot.xyr&quot;</span>).</div><div class="line">      ZmienEtykiete(<span class="stringliteral">&quot;Robot&quot;</span>);</div><div class="line"></div><div class="line"></div><div class="line">  Lacze.<a name="a2"></a><a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#a5d53870de4161dd855b327b3f5d1df9c">DodajNazwePliku_Lamana</a>(<span class="stringliteral">&quot;dat/sciezka.xy&quot;</span>).</div><div class="line">      ZmienStyl(5).<a name="a3"></a><a class="code" href="classPzG_1_1InfoPlikuDoRysowania.html#aa6d4c0fa70db640fde80091aefa1326c">ZmienSzerokosc</a>(2);</div><div class="line"></div><div class="line"></div><div class="line">  Lacze.<a name="a4"></a><a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#a200ce6bdb980c314a9eafe49e8f2dd5e">Inicjalizuj</a>();  <span class="comment">// Tutaj startuje gnuplot.</span></div><div class="line">  Lacze.<a name="a5"></a><a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#ae92c65357bf682478cc68f77885b61d8">ZmienTrybRys</a>(<a name="a6"></a><a class="code" href="namespacePzG.html#aef59d70a0ee2eab473790613c3628944a5eb0cf8b3405e136f092efdb489d60c4">PzG::TR_2D</a>);</div><div class="line"></div><div class="line">  Lacze.<a name="a7"></a><a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#a54c6e9cf9ab2eae479451fd953c2717c">UstawZakresY</a>(0,80);</div><div class="line">  Lacze.<a name="a8"></a><a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#a9c91987dfc869d6fcea96205c581daef">UstawZakresX</a>(0,100);</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">  cin &gt;&gt; noskipws;</div><div class="line"></div><div class="line">  ZainicjalizujStanPoczatkowy();</div><div class="line">  Lacze.<a name="a9"></a><a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#a065f5b8402737cc62b0ad4f66d028335">Rysuj</a>(); </div><div class="line">  cout &lt;&lt; <span class="stringliteral">&quot;Krok 1: Start. Aby kontynuowac nacisnij ENTER ...&quot;</span> &lt;&lt; flush;</div><div class="line"></div><div class="line">  cin &gt;&gt; Opcja;</div><div class="line"></div><div class="line">  UtworzSciezke1();</div><div class="line">  Lacze.<a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#a065f5b8402737cc62b0ad4f66d028335">Rysuj</a>();</div><div class="line">  cout &lt;&lt; <span class="stringliteral">&quot;Krok 2: Idziemy do przodu!!! Aby kontynuowac nacisnij ENTER ...&quot;</span> &lt;&lt; flush;</div><div class="line"> </div><div class="line">  cin &gt;&gt; Opcja;</div><div class="line"></div><div class="line">  UtworzSciezke2();</div><div class="line">  Lacze.<a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#a065f5b8402737cc62b0ad4f66d028335">Rysuj</a>();</div><div class="line">  cout &lt;&lt; <span class="stringliteral">&quot;Krok 3: I tu niestety koniec :( Aby zakonczyc nacisnij ENTER ...&quot;</span> &lt;&lt; flush;</div><div class="line"></div><div class="line">  cin &gt;&gt; Opcja;</div><div class="line">}</div></div><!-- fragment --> </div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Wygenerowano przez
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
+  </ul>
+</div>
+</body>
+</html>

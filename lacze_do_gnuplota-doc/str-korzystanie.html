@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Łącze do GNUPlota: Przykład wykorzystania modułu</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Łącze do GNUPlota
+   &#160;<span id="projectnumber">0.1.1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.8.13 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',false,false,'search.php','Szukaj');
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('str-korzystanie.html','');});
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle">
+<div class="title">Przykład wykorzystania modułu </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><h1><a class="anchor" id="str-zpliku"></a>
+Rysowanie brył - wykorzystywanie plików</h1>
+<p>Moduł pozwala na utworzenie zbioru plików zawierających opis dowolnych brył. Format opisu bryły ma postać zbioru współrzędnych kolejnych wierzchołków. Kolejność jak też sposób ich podawania musi być zgodny z wymogami narzucownymi przez program gnuplot dla przypadku wizualizacji powierzchni. Przedstawiony poniżej plik "korpus.dat" zawiera opis prostopadłościanu.</p>
+<pre class="fragment">   0 -20   0 
+  30 -20  10
+  30  20  10
+   0  20   0
+ #
+
+   0 -20   0 
+  30 -20 -10
+  30  20 -10
+   0  20   0
+ #
+
+   0 -20   0 
+ -30 -20 -10
+ -30  20 -10
+   0  20   0
+ #
+
+   0 -20   0 
+ -30 -20  10
+ -30  20  10
+   0  20   0
+ #
+
+   0 -20   0 
+  30 -20  10
+  30  20  10
+   0  20   0
+ #</pre><p> Ilość znaków "białych" między poszczególnymi liczbami nie jest istotna. Przykładowy rysunek utworzony za pomocą programu <b>gnuplot</b> przedstawiony jest poniżej. </p><div class="image">
+<img src="korpus.png" alt="korpus.png"/>
+<div class="caption">
+Przykład rysunku prostopadłościanu.</div></div>
+<p>Najprostszy program, który umożliwia rysowanie na podstawie danych zawartych w przedstawionym powyżej pliku może mieć postać.</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div><div class="line"><span class="preprocessor">#include &lt;iomanip&gt;</span></div><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="lacze__do__gnuplota_8hh.html">lacze_do_gnuplota.hh</a>&quot;</span></div><div class="line"></div><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespacestd.html">std</a>;</div><div class="line"></div><div class="line"><span class="keywordtype">int</span> main()</div><div class="line">{</div><div class="line">  <a class="code" href="classPzG_1_1LaczeDoGNUPlota.html">PzG::LaczeDoGNUPlota</a>  Lacze;</div><div class="line">  <span class="keywordtype">char</span>             ZnakKonca;</div><div class="line"></div><div class="line">  Lacze.<a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#ae92c65357bf682478cc68f77885b61d8">ZmienTrybRys</a>(<a class="code" href="namespacePzG.html#aef59d70a0ee2eab473790613c3628944a856e6b0fa6b8a9dc184c60cf27dcc5d2">PzG::TR_3D</a>);</div><div class="line">  Lacze.<a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#aa815ce8ec16e12fc246cf422e562869e">DodajNazwePliku</a>(<span class="stringliteral">&quot;korpus.dat&quot;</span>);</div><div class="line">  Lacze.<a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#a200ce6bdb980c314a9eafe49e8f2dd5e">Inicjalizuj</a>();  <span class="comment">// Tutaj startuje gnuplot.</span></div><div class="line">  Lacze.<a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#a065f5b8402737cc62b0ad4f66d028335">Rysuj</a>();        <span class="comment">// Teraz powinno pojawic sie okienko gnuplota</span></div><div class="line">                        <span class="comment">// z rysunkiem, o ile istnieje plik &quot;korpus.dat&quot;</span></div><div class="line">  cout &lt;&lt; <span class="stringliteral">&quot;Nacisnij ENTER, aby zakonczyc.&quot;</span> &lt;&lt; endl;</div><div class="line">  cin &gt;&gt; noskipws &gt;&gt; ZnakKonca;</div><div class="line">}</div></div><!-- fragment --> <dl class="section attention"><dt>Uwaga</dt><dd>Nazwy plików, z których będzie brany opis rysowanej powierzchni zadajemy tylko raz. Błędem jest zadawanie tych samych nazw przed każdorazowym rysowaniem. Nazwy plików pamiętane są przez cały czas. Można jednak je usunąć korzystając z metody <a class="el" href="classPzG_1_1LaczeDoGNUPlota.html#a89a1d90d017d264cd26398464d074073">PzG::LaczeDoGNUPlota::UsunWszystkieNazwyPlikow</a>.</dd></dl>
+<p>Rysunek, który ukaże się będzie miał postać: </p><div class="image">
+<img src="korpus-app1.png" alt="korpus-app1.png"/>
+<div class="caption">
+Wygenerowany przez gnuplot rysunek.</div></div>
+<p> Aby powiększyć obiekt na rysunku, możemy w tym celu użyć zmiany zakresu podziałki. Służą do tego metody <a class="el" href="classPzG_1_1LaczeDoGNUPlota.html#a9c91987dfc869d6fcea96205c581daef">PzG::LaczeDoGNUPlota::UstawZakresX</a>, <a class="el" href="classPzG_1_1LaczeDoGNUPlota.html#a54c6e9cf9ab2eae479451fd953c2717c">PzG::LaczeDoGNUPlota::UstawZakresY</a> oraz <a class="el" href="classPzG_1_1LaczeDoGNUPlota.html#a1dbbb2b86fb13b8632e6bad9df2a82e3">PzG::LaczeDoGNUPlota::UstawZakresZ</a>. Chcąc uniknąć zniekształceń zmian należy dokonać równomiernie wzdłuż wszystkich osi. Obrazuje to poniże przedstawiony kod programu. </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div><div class="line"><span class="preprocessor">#include &lt;iomanip&gt;</span></div><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="lacze__do__gnuplota_8hh.html">lacze_do_gnuplota.hh</a>&quot;</span></div><div class="line"></div><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespacestd.html">std</a>;</div><div class="line"></div><div class="line"><span class="preprocessor">#define POWIEKSZ  6</span></div><div class="line"></div><div class="line"><span class="keywordtype">int</span> main()</div><div class="line">{</div><div class="line">  <a class="code" href="classPzG_1_1LaczeDoGNUPlota.html">PzG::LaczeDoGNUPlota</a>  Lacze;</div><div class="line">  <span class="keywordtype">char</span>                  ZnakKonca;</div><div class="line"></div><div class="line">  Lacze.<a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#ae92c65357bf682478cc68f77885b61d8">ZmienTrybRys</a>(<a class="code" href="namespacePzG.html#aef59d70a0ee2eab473790613c3628944a856e6b0fa6b8a9dc184c60cf27dcc5d2">PzG::TR_3D</a>);</div><div class="line">  Lacze.<a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#aa815ce8ec16e12fc246cf422e562869e">DodajNazwePliku</a>(<span class="stringliteral">&quot;korpus.dat&quot;</span>);</div><div class="line">  Lacze.<a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#a200ce6bdb980c314a9eafe49e8f2dd5e">Inicjalizuj</a>();  <span class="comment">// Tutaj startuje gnuplot.</span></div><div class="line"></div><div class="line">  Lacze.<a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#a9c91987dfc869d6fcea96205c581daef">UstawZakresX</a>(Lacze.<a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#a66836c9749bf179420e4ca3e9447efd7">Xmin</a>()/POWIEKSZ,Lacze.<a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#a8e23479629af3df3d352b7839ae396b8">Xmax</a>()/POWIEKSZ);</div><div class="line">  Lacze.<a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#a54c6e9cf9ab2eae479451fd953c2717c">UstawZakresY</a>(Lacze.<a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#a9352c0382bfaeaaba9f65399a7383164">Ymin</a>()/POWIEKSZ,Lacze.<a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#ac54e4e7448ce3bd324efdc94a999f535">Ymax</a>()/POWIEKSZ);</div><div class="line">  Lacze.<a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#a1dbbb2b86fb13b8632e6bad9df2a82e3">UstawZakresZ</a>(Lacze.<a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#a9068bd9a9873ba9c6d70016f1ae7cd7f">Zmin</a>()/POWIEKSZ,Lacze.<a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#a20a5d03e1fc19c682032bffc54340f12">Zmax</a>()/POWIEKSZ);</div><div class="line"></div><div class="line">  Lacze.<a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#a065f5b8402737cc62b0ad4f66d028335">Rysuj</a>();        <span class="comment">// Teraz powinno pojawic sie okienko gnuplota</span></div><div class="line">                        <span class="comment">// z rysunkiem, o ile istnieje plik &quot;korpus.dat&quot;</span></div><div class="line">  cout &lt;&lt; <span class="stringliteral">&quot;Nacisnij ENTER, aby zakonczyc.&quot;</span> &lt;&lt; endl;</div><div class="line">  cin &gt;&gt; noskipws &gt;&gt; ZnakKonca;</div><div class="line">}</div></div><!-- fragment --><p>Otrzymany rysunek ma postać: </p><div class="image">
+<img src="korpus-app2.png" alt="korpus-app2.png"/>
+<div class="caption">
+Rysunek powiększonej bryły.</div></div>
+<p> Zmianę punktu patrzenia na scenę można osiągnąć wykorzystując metodę <a class="el" href="classPzG_1_1LaczeDoGNUPlota.html#a94d8527fd78048ed6cb32ffb29e5f903">PzG::LaczeDoGNUPlota::UstawRotacjeXZ</a>. </p><div class="fragment"><div class="line"><span class="keywordtype">int</span> main()</div><div class="line">{</div><div class="line">  <a class="code" href="classPzG_1_1LaczeDoGNUPlota.html">PzG::LaczeDoGNUPlota</a>  Lacze;</div><div class="line">  <span class="keywordtype">char</span>                  ZnakKonca;</div><div class="line"></div><div class="line">  Lacze.<a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#ae92c65357bf682478cc68f77885b61d8">ZmienTrybRys</a>(<a class="code" href="namespacePzG.html#aef59d70a0ee2eab473790613c3628944a856e6b0fa6b8a9dc184c60cf27dcc5d2">PzG::TR_3D</a>);</div><div class="line">  Lacze.<a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#aa815ce8ec16e12fc246cf422e562869e">DodajNazwePliku</a>(<span class="stringliteral">&quot;korpus.dat&quot;</span>);</div><div class="line">  Lacze.<a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#a200ce6bdb980c314a9eafe49e8f2dd5e">Inicjalizuj</a>();  <span class="comment">// Tutaj startuje gnuplot.</span></div><div class="line"></div><div class="line">  Lacze.<a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#a9c91987dfc869d6fcea96205c581daef">UstawZakresX</a>(Lacze.<a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#a66836c9749bf179420e4ca3e9447efd7">Xmin</a>()/POWIEKSZ,Lacze.<a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#a8e23479629af3df3d352b7839ae396b8">Xmax</a>()/POWIEKSZ);</div><div class="line">  Lacze.<a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#a54c6e9cf9ab2eae479451fd953c2717c">UstawZakresY</a>(Lacze.<a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#a9352c0382bfaeaaba9f65399a7383164">Ymin</a>()/POWIEKSZ,Lacze.<a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#ac54e4e7448ce3bd324efdc94a999f535">Ymax</a>()/POWIEKSZ);</div><div class="line">  Lacze.<a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#a1dbbb2b86fb13b8632e6bad9df2a82e3">UstawZakresZ</a>(Lacze.<a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#a9068bd9a9873ba9c6d70016f1ae7cd7f">Zmin</a>()/POWIEKSZ,Lacze.<a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#a20a5d03e1fc19c682032bffc54340f12">Zmax</a>()/POWIEKSZ);</div><div class="line"></div><div class="line">  Lacze.<a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#a94d8527fd78048ed6cb32ffb29e5f903">UstawRotacjeXZ</a>(40,60);  <span class="comment">// Tutaj zadajemy zmianę punktu obserwacji.</span></div><div class="line"></div><div class="line">  Lacze.<a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#a065f5b8402737cc62b0ad4f66d028335">Rysuj</a>();        <span class="comment">// Teraz powinno pojawic sie okienko gnuplota</span></div><div class="line">                        <span class="comment">// z rysunkiem, o ile istnieje plik &quot;korpus.dat&quot;</span></div><div class="line">  cout &lt;&lt; <span class="stringliteral">&quot;Nacisnij ENTER, aby zakonczyc.&quot;</span> &lt;&lt; endl;</div><div class="line">  cin &gt;&gt; noskipws &gt;&gt; ZnakKonca;</div><div class="line">}</div></div><!-- fragment --><p> Utworzony rysunek ma postać: </p><div class="image">
+<img src="korpus-app3.png" alt="korpus-app3.png"/>
+<div class="caption">
+Rysunek powiększonej bryły.</div></div>
+<p> Istnieje możliwość operowania wieloma widokami jednocześnie. Przykład programowej realizacji takiej opcji demonstruje poniższy kod. </p><div class="fragment"><div class="line"><span class="keywordtype">int</span> main()</div><div class="line">{</div><div class="line">  <a class="code" href="classPzG_1_1LaczeDoGNUPlota.html">PzG::LaczeDoGNUPlota</a>  Lacze, DrugieLacze;</div><div class="line">  <span class="keywordtype">char</span>             ZnakKonca;</div><div class="line"></div><div class="line">  Lacze.<a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#ae92c65357bf682478cc68f77885b61d8">ZmienTrybRys</a>(<a class="code" href="namespacePzG.html#aef59d70a0ee2eab473790613c3628944a856e6b0fa6b8a9dc184c60cf27dcc5d2">PzG::TR_3D</a>);</div><div class="line">  Lacze.<a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#aa815ce8ec16e12fc246cf422e562869e">DodajNazwePliku</a>(<span class="stringliteral">&quot;korpus.dat&quot;</span>);  <span class="comment">// Lista plików jest wspólna dla </span></div><div class="line">                                        <span class="comment">// wszystkich łączy. Nazwe wystarczy</span></div><div class="line">                                        <span class="comment">// dodać tylko poprzez jedno z łączy.</span></div><div class="line"></div><div class="line">  Lacze.<a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#a200ce6bdb980c314a9eafe49e8f2dd5e">Inicjalizuj</a>();  <span class="comment">// Tutaj startuje gnuplot. </span></div><div class="line">  DrugieLacze.<a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#a200ce6bdb980c314a9eafe49e8f2dd5e">Inicjalizuj</a>();</div><div class="line"></div><div class="line">  Lacze.<a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#a9c91987dfc869d6fcea96205c581daef">UstawZakresX</a>(Lacze.<a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#a66836c9749bf179420e4ca3e9447efd7">Xmin</a>()/POWIEKSZ,Lacze.<a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#a8e23479629af3df3d352b7839ae396b8">Xmax</a>()/POWIEKSZ);</div><div class="line">  Lacze.<a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#a54c6e9cf9ab2eae479451fd953c2717c">UstawZakresY</a>(Lacze.<a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#a9352c0382bfaeaaba9f65399a7383164">Ymin</a>()/POWIEKSZ,Lacze.<a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#ac54e4e7448ce3bd324efdc94a999f535">Ymax</a>()/POWIEKSZ);</div><div class="line">  Lacze.<a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#a1dbbb2b86fb13b8632e6bad9df2a82e3">UstawZakresZ</a>(Lacze.<a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#a9068bd9a9873ba9c6d70016f1ae7cd7f">Zmin</a>()/POWIEKSZ,Lacze.<a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#a20a5d03e1fc19c682032bffc54340f12">Zmax</a>()/POWIEKSZ);</div><div class="line"></div><div class="line">  Lacze.<a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#a94d8527fd78048ed6cb32ffb29e5f903">UstawRotacjeXZ</a>(40,60);</div><div class="line"></div><div class="line">  DrugieLacze.<a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#a94d8527fd78048ed6cb32ffb29e5f903">UstawRotacjeXZ</a>(80,10);</div><div class="line"></div><div class="line">  Lacze.<a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#a065f5b8402737cc62b0ad4f66d028335">Rysuj</a>();        <span class="comment">// Teraz powinno pojawic sie okienko gnuplota</span></div><div class="line">  DrugieLacze.<a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#a065f5b8402737cc62b0ad4f66d028335">Rysuj</a>();  <span class="comment">// z rysunkiem, o ile istnieje plik &quot;korpus.dat&quot;</span></div><div class="line">  </div><div class="line">  cout &lt;&lt; <span class="stringliteral">&quot;Nacisnij ENTER, aby zakonczyc.&quot;</span> &lt;&lt; endl;</div><div class="line">  cin &gt;&gt; noskipws &gt;&gt; ZnakKonca;</div><div class="line">}</div></div><!-- fragment --> </div></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Wygenerowano przez
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
+  </ul>
+</div>
+</body>
+</html>

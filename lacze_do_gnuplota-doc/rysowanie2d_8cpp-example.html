@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Łącze do GNUPlota: rysowanie2d.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Łącze do GNUPlota
+   &#160;<span id="projectnumber">0.1.1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.8.13 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',false,false,'search.php','Szukaj');
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('rysowanie2d_8cpp-example.html','');});
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle">
+<div class="title">rysowanie2d.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<p>Zawiera przykład uruchomienia programu <b>gnuplot</b> w trybie w trybie rysowania wykresów 2D. Rezultat działania programu przedstawiony jest poniżej.<br />
+<br />
+</p><div class="image">
+<img src="przyklad-rysowanie2d-600x450.png" alt="przyklad-rysowanie2d-600x450.png"/>
+<div class="caption">
+Zrzut ekranu pokazujący wynik działania programu.</div></div>
+<p> Zawarość pliku: "dat/mainipulator.xy" </p><pre class="fragment">   0  0
+ -10 15
+   0 25
+  10 20
+</pre><p>Kod programu:</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div><div class="line"><span class="preprocessor">#include &lt;iomanip&gt;</span></div><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="lacze__do__gnuplota_8hh.html">lacze_do_gnuplota.hh</a>&quot;</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespacestd.html">std</a>;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"><span class="keywordtype">int</span> main() </div><div class="line">{</div><div class="line">  <span class="keywordtype">char</span>  Opcja;</div><div class="line">  <a name="_a0"></a><a class="code" href="classPzG_1_1LaczeDoGNUPlota.html">PzG::LaczeDoGNUPlota</a>  Lacze;</div><div class="line"></div><div class="line"></div><div class="line">  Lacze.<a name="a1"></a><a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#aa815ce8ec16e12fc246cf422e562869e">DodajNazwePliku</a>(<span class="stringliteral">&quot;dat/manipulator.xy&quot;</span>)</div><div class="line">     .<a name="a2"></a><a class="code" href="classPzG_1_1InfoPlikuDoRysowania.html#a4245bff195e0d6d382ed7d776b5ad645">ZmienSposobRys</a>(<a name="a3"></a><a class="code" href="namespacePzG.html#a53d89f50686ddd39301f9706cc1247dca22656aba69ada1776d9522ff83f70546">PzG::SR_Ciagly</a>)</div><div class="line">     .<a name="a4"></a><a class="code" href="classPzG_1_1InfoPlikuDoRysowania.html#aa6d4c0fa70db640fde80091aefa1326c">ZmienSzerokosc</a>(6);</div><div class="line">  Lacze.<a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#aa815ce8ec16e12fc246cf422e562869e">DodajNazwePliku</a>(<span class="stringliteral">&quot;dat/manipulator.xy&quot;</span>)</div><div class="line">     .<a class="code" href="classPzG_1_1InfoPlikuDoRysowania.html#a4245bff195e0d6d382ed7d776b5ad645">ZmienSposobRys</a>(<a name="a5"></a><a class="code" href="namespacePzG.html#a53d89f50686ddd39301f9706cc1247dca307cba9b5669189418e9d595f0cc83a4">PzG::SR_Punktowy</a>)</div><div class="line">     .<a class="code" href="classPzG_1_1InfoPlikuDoRysowania.html#aa6d4c0fa70db640fde80091aefa1326c">ZmienSzerokosc</a>(2);</div><div class="line">  Lacze.<a name="a6"></a><a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#a200ce6bdb980c314a9eafe49e8f2dd5e">Inicjalizuj</a>();  <span class="comment">// Tutaj startuje gnuplot.</span></div><div class="line">  Lacze.<a name="a7"></a><a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#ae92c65357bf682478cc68f77885b61d8">ZmienTrybRys</a>(<a name="a8"></a><a class="code" href="namespacePzG.html#aef59d70a0ee2eab473790613c3628944a5eb0cf8b3405e136f092efdb489d60c4">PzG::TR_2D</a>);</div><div class="line"></div><div class="line">  Lacze.<a name="a9"></a><a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#a54c6e9cf9ab2eae479451fd953c2717c">UstawZakresY</a>(-5,35);</div><div class="line">  Lacze.<a name="a10"></a><a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#a9c91987dfc869d6fcea96205c581daef">UstawZakresX</a>(-35,35);</div><div class="line">  Lacze.<a name="a11"></a><a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#a065f5b8402737cc62b0ad4f66d028335">Rysuj</a>(); </div><div class="line">   </div><div class="line">  cout &lt;&lt; <span class="stringliteral">&quot;Aby zakonczyc nacisnij ENTER ...&quot;</span> &lt;&lt; flush;</div><div class="line">  cin &gt;&gt; noskipws &gt;&gt; Opcja;</div><div class="line">}</div></div><!-- fragment --> </div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Wygenerowano przez
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
+  </ul>
+</div>
+</body>
+</html>

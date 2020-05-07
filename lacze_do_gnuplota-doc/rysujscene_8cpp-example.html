@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Łącze do GNUPlota: rysujscene.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Łącze do GNUPlota
+   &#160;<span id="projectnumber">0.1.1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.8.13 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',false,false,'search.php','Szukaj');
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('rysujscene_8cpp-example.html','');});
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle">
+<div class="title">rysujscene.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<p>Zawiera przykład tworzenia wieloboków oraz linii łamanych i wymuszenia ich rysowania. </p><div class="image">
+<img src="scena-pelna.png" alt="scena-pelna.png"/>
+<div class="caption">
+Zrzut ekranu pokazujący wynik działania programu.</div></div>
+<p> Kod programu:</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div><div class="line"><span class="preprocessor">#include &lt;fstream&gt;</span></div><div class="line"><span class="preprocessor">#include &lt;cmath&gt;</span></div><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="lacze__do__gnuplota_8hh.html">lacze_do_gnuplota.hh</a>&quot;</span></div><div class="line"></div><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespacestd.html">std</a>;</div><div class="line"></div><div class="line"><span class="preprocessor">#define  PRZESZKODA_R  15</span></div><div class="line"><span class="preprocessor">#define  PRZESZKODA1_Xo  90</span></div><div class="line"><span class="preprocessor">#define  PRZESZKODA1_Yo  55</span></div><div class="line"><span class="preprocessor">#define  PRZESZKODA2_Xo  30</span></div><div class="line"><span class="preprocessor">#define  PRZESZKODA2_Yo  40</span></div><div class="line"></div><div class="line"><span class="comment">// Funkcja zapisuje wspolrzedne dwoch przykladowych wielobokow</span></div><div class="line"><span class="comment">// modelujacych przeszkody.</span></div><div class="line"><span class="keywordtype">bool</span> ZapiszSceneDoPliku(<span class="keyword">const</span> <span class="keywordtype">char</span> *NazwaPliku)</div><div class="line">{</div><div class="line">  ofstream Strm(NazwaPliku);</div><div class="line"></div><div class="line">  <span class="keywordflow">if</span> (Strm.fail()) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div><div class="line">  <span class="comment">// Zapisanie wspolrzednych wieloboku nr 1</span></div><div class="line">  Strm &lt;&lt; PRZESZKODA1_Xo-PRZESZKODA_R &lt;&lt; <span class="stringliteral">&quot;  &quot;</span> &lt;&lt;  PRZESZKODA1_Yo &lt;&lt; endl;</div><div class="line">  Strm &lt;&lt; PRZESZKODA1_Xo &lt;&lt; <span class="stringliteral">&quot;  &quot;</span> &lt;&lt;  PRZESZKODA1_Yo+PRZESZKODA_R &lt;&lt; endl;</div><div class="line">  Strm &lt;&lt; PRZESZKODA1_Xo+PRZESZKODA_R &lt;&lt; <span class="stringliteral">&quot;  &quot;</span> &lt;&lt;  PRZESZKODA1_Yo &lt;&lt; endl;</div><div class="line">  Strm &lt;&lt; PRZESZKODA1_Xo &lt;&lt; <span class="stringliteral">&quot;  &quot;</span> &lt;&lt;  PRZESZKODA1_Yo-PRZESZKODA_R &lt;&lt; endl;</div><div class="line">  Strm &lt;&lt; PRZESZKODA1_Xo-PRZESZKODA_R &lt;&lt; <span class="stringliteral">&quot;  &quot;</span> &lt;&lt;  PRZESZKODA1_Yo &lt;&lt; endl;</div><div class="line">  <span class="comment">// Dodajemy linie wolna, a po niej wpisujemy wspolrzedne</span></div><div class="line">  <span class="comment">// nastepnej przeszkody.</span></div><div class="line">  Strm &lt;&lt; endl;</div><div class="line">  Strm &lt;&lt; PRZESZKODA2_Xo-PRZESZKODA_R &lt;&lt; <span class="stringliteral">&quot;  &quot;</span> &lt;&lt;  PRZESZKODA2_Yo &lt;&lt; endl;</div><div class="line">  Strm &lt;&lt; PRZESZKODA2_Xo &lt;&lt; <span class="stringliteral">&quot;  &quot;</span> &lt;&lt;  PRZESZKODA2_Yo+PRZESZKODA_R &lt;&lt; endl;</div><div class="line">  Strm &lt;&lt; PRZESZKODA2_Xo+PRZESZKODA_R &lt;&lt; <span class="stringliteral">&quot;  &quot;</span> &lt;&lt;  PRZESZKODA2_Yo &lt;&lt; endl;</div><div class="line">  Strm &lt;&lt; PRZESZKODA2_Xo &lt;&lt; <span class="stringliteral">&quot;  &quot;</span> &lt;&lt;  PRZESZKODA2_Yo-PRZESZKODA_R &lt;&lt; endl;</div><div class="line">  Strm &lt;&lt; PRZESZKODA2_Xo-PRZESZKODA_R &lt;&lt; <span class="stringliteral">&quot;  &quot;</span> &lt;&lt;  PRZESZKODA2_Yo &lt;&lt; endl;</div><div class="line">  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div><div class="line">}</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"><span class="keywordtype">bool</span> ZapiszSciezkeDoPliku(<span class="keyword">const</span> <span class="keywordtype">char</span> *NazwaPliku)</div><div class="line">{</div><div class="line">  ofstream Strm(NazwaPliku);</div><div class="line"></div><div class="line">  <span class="keywordflow">if</span> (Strm.fail()) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div><div class="line">  Strm &lt;&lt; 10 &lt;&lt; <span class="stringliteral">&quot;  &quot;</span> &lt;&lt; 50 &lt;&lt; endl;</div><div class="line">  Strm &lt;&lt; 40 &lt;&lt; <span class="stringliteral">&quot;  &quot;</span> &lt;&lt; 70 &lt;&lt; endl;</div><div class="line">  Strm &lt;&lt; 80 &lt;&lt; <span class="stringliteral">&quot;  &quot;</span> &lt;&lt; 20 &lt;&lt; endl;</div><div class="line">  Strm &lt;&lt; 110 &lt;&lt; <span class="stringliteral">&quot;  &quot;</span> &lt;&lt; 40 &lt;&lt; endl;</div><div class="line">  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div><div class="line">}</div><div class="line"></div><div class="line"><span class="keywordtype">bool</span> ZapiszStartICelDoPliku(<span class="keyword">const</span> <span class="keywordtype">char</span> *NazwaPliku)</div><div class="line">{</div><div class="line">  ofstream Strm(NazwaPliku);</div><div class="line"></div><div class="line">  <span class="keywordflow">if</span> (Strm.fail()) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div><div class="line">  Strm &lt;&lt; 10 &lt;&lt; <span class="stringliteral">&quot;  &quot;</span> &lt;&lt; 50 &lt;&lt; endl;</div><div class="line">  Strm &lt;&lt; 110 &lt;&lt; <span class="stringliteral">&quot;  &quot;</span> &lt;&lt; 40 &lt;&lt; endl;</div><div class="line">  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div><div class="line">}</div><div class="line"></div><div class="line"></div><div class="line"><span class="preprocessor">#define NAZWAPLIKU_SCIEZKA &quot;dat/sciezka.xy&quot; </span></div><div class="line"><span class="preprocessor">#define NAZWAPLIKU_SCENA   &quot;dat/scena.xy&quot;</span></div><div class="line"><span class="preprocessor">#define NAZWAPLIKU_PUNKTY  &quot;dat/punkty.xy&quot;</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="keywordtype">int</span> main()</div><div class="line">{</div><div class="line">  <a name="_a0"></a><a class="code" href="classPzG_1_1LaczeDoGNUPlota.html">PzG::LaczeDoGNUPlota</a>  Lacze;</div><div class="line">  <span class="keywordtype">char</span> c;</div><div class="line"></div><div class="line">  Lacze.<a name="a1"></a><a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#a200ce6bdb980c314a9eafe49e8f2dd5e">Inicjalizuj</a>();  <span class="comment">// Tutaj startuje gnuplot.</span></div><div class="line">  Lacze.<a name="a2"></a><a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#ae92c65357bf682478cc68f77885b61d8">ZmienTrybRys</a>(<a name="a3"></a><a class="code" href="namespacePzG.html#aef59d70a0ee2eab473790613c3628944a5eb0cf8b3405e136f092efdb489d60c4">PzG::TR_2D</a>);</div><div class="line"></div><div class="line">  Lacze.<a name="a4"></a><a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#a9c91987dfc869d6fcea96205c581daef">UstawZakresX</a>(0,120);</div><div class="line">  Lacze.<a name="a5"></a><a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#a54c6e9cf9ab2eae479451fd953c2717c">UstawZakresY</a>(0,80);</div><div class="line">  Lacze.<a name="a6"></a><a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#a1dbbb2b86fb13b8632e6bad9df2a82e3">UstawZakresZ</a>(0,10);</div><div class="line">  </div><div class="line">  Lacze.<a name="a7"></a><a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#a94d8527fd78048ed6cb32ffb29e5f903">UstawRotacjeXZ</a>(0,0); <span class="comment">// Tu ustawiamy punkt obserwacji</span></div><div class="line"></div><div class="line">  <span class="keywordflow">if</span> (!ZapiszSciezkeDoPliku(NAZWAPLIKU_SCIEZKA)) {</div><div class="line">    cerr &lt;&lt; <span class="stringliteral">&quot;!!! Nie powiodl sie zapis do pliku: &quot;</span> NAZWAPLIKU_SCIEZKA</div><div class="line">         &lt;&lt; endl;</div><div class="line">    <span class="keywordflow">return</span> 1;</div><div class="line">  }</div><div class="line">  <span class="keywordflow">if</span> (!ZapiszSceneDoPliku(NAZWAPLIKU_SCENA)) {</div><div class="line">    cerr &lt;&lt; <span class="stringliteral">&quot;!!! Nie powiodl sie zapis do pliku: &quot;</span> NAZWAPLIKU_SCENA</div><div class="line">         &lt;&lt; endl;</div><div class="line">    <span class="keywordflow">return</span> 1;</div><div class="line">  }</div><div class="line">  <span class="keywordflow">if</span> (!ZapiszStartICelDoPliku(NAZWAPLIKU_PUNKTY)) {</div><div class="line">    cerr &lt;&lt; <span class="stringliteral">&quot;!!! Nie powiodl sie zapis do pliku: &quot;</span> NAZWAPLIKU_PUNKTY</div><div class="line">         &lt;&lt; endl;</div><div class="line">    <span class="keywordflow">return</span> 1;</div><div class="line">  }</div><div class="line"></div><div class="line">    <span class="comment">// Dodanie nazwy pliku zawierajacego opis wspolrzednych </span></div><div class="line">    <span class="comment">// wierzcholkow lamanej reprezentujaca sciezke ruchu robota.     </span></div><div class="line">  Lacze.<a name="a8"></a><a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#aa815ce8ec16e12fc246cf422e562869e">DodajNazwePliku</a>(NAZWAPLIKU_SCIEZKA);</div><div class="line"></div><div class="line">    <span class="comment">// Dodanie nazwy pliku zawierajacego opis wspolrzednych </span></div><div class="line">    <span class="comment">// wierzcholkow wielobokow, ktore modeluja przeszkody.</span></div><div class="line">  Lacze.<a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#aa815ce8ec16e12fc246cf422e562869e">DodajNazwePliku</a>(NAZWAPLIKU_SCENA);</div><div class="line"></div><div class="line">    <span class="comment">// Dodanie nazwy pliku zawierajacego wspolrzedne punktu startu i celu.</span></div><div class="line">  Lacze.<a name="a9"></a><a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#ab3286408bb2ca5c5382e721b40d07f4f">DodajNazwePliku_JednakowePunkty</a>(NAZWAPLIKU_PUNKTY); </div><div class="line"></div><div class="line">  Lacze.<a name="a10"></a><a class="code" href="classPzG_1_1LaczeDoGNUPlota.html#a065f5b8402737cc62b0ad4f66d028335">Rysuj</a>();        <span class="comment">// Teraz powinno pojawic sie okienko gnuplota</span></div><div class="line">                        <span class="comment">// z rysunkiem.</span></div><div class="line">  cout &lt;&lt; <span class="stringliteral">&quot;Nacisnij ENTER, aby zakonczyc.&quot;</span> &lt;&lt; endl;</div><div class="line">  cin &gt;&gt; noskipws &gt;&gt; c;</div><div class="line">}</div></div><!-- fragment --> </div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Wygenerowano przez
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
+  </ul>
+</div>
+</body>
+</html>

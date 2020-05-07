@@ -1,0 +1,11 @@
+<map id="PzG::LaczeDoGNUPlota::DopiszRysowanieZRoznychPunktow" name="PzG::LaczeDoGNUPlota::DopiszRysowanieZRoznychPunktow">
+<area shape="rect" id="node2" href="$namespacePzG.html#a85d3a77f67c2724ba3675bc3ef05eb81" title="Dopisuje do polecenia rysowania wpisy z nazwami plików, w których są współrzędne punktów. " alt="" coords="305,71,518,112"/>
+<area shape="rect" id="node5" href="$namespacePzG.html#a7227cb39c785b1c746b6bb5515c0b781" title="Dodaje do listy rysowanych punktów, punkty o różnych rozmiarach. " alt="" coords="300,160,523,201"/>
+<area shape="rect" id="node10" href="$namespacePzG.html#ae6b9705e199ad695b61b4e902eaf0d6c" title="Dopisuje do tworzonego polenia dla gnuplota wpisy ustawiające etykiety punktów. " alt="" coords="310,250,513,277"/>
+<area shape="rect" id="node3" href="$classPzG_1_1AtrybutyRysowania.html#a9f0f08bb69dca9c12e7f55c165c6223e" title="Udostępnia rozmiar rysowania. " alt="" coords="577,5,748,47"/>
+<area shape="rect" id="node4" href="$classPzG_1_1AtrybutyRysowania.html#a85f1665049d64618e1ac1d18c000ff76" title="Udostępnia styl rysowania. " alt="" coords="577,71,748,112"/>
+<area shape="rect" id="node6" href="$namespacePzG.html#a169c311f0e0b6ffadcd44e91e749f72d" title="Wczytuje z pliku listę punktów. " alt="" coords="571,160,755,201"/>
+<area shape="rect" id="node7" href="$classPzG_1_1AtrybutyRysowania.html#ab068535b4d2f755c394557d1da72a4eb" title="Zmienia kolor rysowania. " alt="" coords="803,95,973,136"/>
+<area shape="rect" id="node8" href="$classPzG_1_1AtrybutyRysowania.html#af4b140eb03bc10b6fd816fad63f8372e" title="Zmienia rozmiar rysowania. " alt="" coords="803,160,973,201"/>
+<area shape="rect" id="node9" href="$classPzG_1_1AtrybutyRysowania.html#a2ac97706124b14072715ecf3f07e82b4" title="Zmienia styl rysowania. " alt="" coords="803,225,973,267"/>
+</map>

@@ -1,0 +1,8 @@
+<map id="PzG::LaczeDoGNUPlota::Rysuj" name="PzG::LaczeDoGNUPlota::Rysuj">
+<area shape="rect" id="node2" href="$namespacePzG.html#aa010184f31b26bb561b42f22438b821e" title="Funkcja pomocnicza, dopisuje do polecenia wpisy związane z rysowaniem z pliku. " alt="" coords="228,29,437,56"/>
+<area shape="rect" id="node3" href="$namespacePzG.html#a7227cb39c785b1c746b6bb5515c0b781" title="Dodaje do listy rysowanych punktów, punkty o różnych rozmiarach. " alt="" coords="221,105,444,146"/>
+<area shape="rect" id="node4" href="$namespacePzG.html#a169c311f0e0b6ffadcd44e91e749f72d" title="Wczytuje z pliku listę punktów. " alt="" coords="492,105,676,146"/>
+<area shape="rect" id="node5" href="$classPzG_1_1AtrybutyRysowania.html#ab068535b4d2f755c394557d1da72a4eb" title="Zmienia kolor rysowania. " alt="" coords="724,39,895,81"/>
+<area shape="rect" id="node6" href="$classPzG_1_1AtrybutyRysowania.html#af4b140eb03bc10b6fd816fad63f8372e" title="Zmienia rozmiar rysowania. " alt="" coords="724,105,895,146"/>
+<area shape="rect" id="node7" href="$classPzG_1_1AtrybutyRysowania.html#a2ac97706124b14072715ecf3f07e82b4" title="Zmienia styl rysowania. " alt="" coords="724,170,895,211"/>
+</map>
