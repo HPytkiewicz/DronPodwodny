@@ -3,17 +3,17 @@ CPPFLAGS= -c -g -Wall -pedantic -std=c++17
 __start__: example.out
 	./example.out
 
-example.out: Dr3D_gnuplot_api.o example.o
-	g++ -o example.out example.o Dr3D_gnuplot_api.o -lpthread
+example.out: obj/Dr3D_gnuplot_api.o obj/example.o
+	g++ -o example.out objexample.o obj/Dr3D_gnuplot_api.o -lpthread
 
-example.o: example.cpp Dr3D_gnuplot_api.hh
-	g++ ${CPPFLAGS} -o example.o example.cpp
+obj/example.o: src/example.cpp inc/Dr3D_gnuplot_api.hh
+	g++ ${CPPFLAGS} -o obj/example.o src/example.cpp
 
-Dr3D_gnuplot_api.o: Dr3D_gnuplot_api.cpp Dr3D_gnuplot_api.hh
-	g++ ${CPPFLAGS} -o Dr3D_gnuplot_api.o Dr3D_gnuplot_api.cpp
+obj/Dr3D_gnuplot_api.o: src/Dr3D_gnuplot_api.cpp inc/Dr3D_gnuplot_api.hh
+	g++ ${CPPFLAGS} -o obj/Dr3D_gnuplot_api.o src/Dr3D_gnuplot_api.cpp
 
-Dr3D_gnuplot_api.hh: Draw3D_api_interface.hh
-	touch Dr3D_gnuplot_api.hh
+inc/Dr3D_gnuplot_api.hh: inc/Draw3D_api_interface.hh
+	touch inc/Dr3D_gnuplot_api.hh
 
 clear:
 	rm example.out example.o Dr3D_gnuplot_api.o
