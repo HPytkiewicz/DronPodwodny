@@ -2,13 +2,13 @@
 #define MACIERZ_HH
 
 #include "rozmiar.h"
-#include "SWektor.hh"
+#include "Wektor.hh"
 #include <iostream>
-#include "LZespolona.hh"
 
 
 template<class TYP, int ROZMIAR>
 class Macierz {
+protected:
   Wektor<TYP,ROZMIAR> tab[ROZMIAR];
   //  TYP dopelnienie(int x, int y) const;
  public:

@@ -12,5 +12,7 @@
 #define ERRORNAME "Error: Niepoprawna nazwa pliku."
 #define ERROREOF "Error: Koniec pliku."
 
+enum Wymiar{WymiarX, WymiarY, WymiarZ};
+
 
 #endi

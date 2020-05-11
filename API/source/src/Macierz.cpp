@@ -1,8 +1,6 @@
 
-#include "SMacierz.hh"
-#include "LZespolona.hh"
+#include "Macierz.hh"
 #include <iomanip>
-#include <iostream>
 
 // Odwolanie sie do indexu macierzy
 template<class TYP, int ROZMIAR>

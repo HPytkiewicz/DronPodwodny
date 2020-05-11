@@ -1,12 +1,13 @@
-#ifndef SWEKTOR_HH
-#define SWEKTOR_HH
+#ifndef WEKTOR_HH
+#define WEKTOR_HH
 
 #include "rozmiar.h"
-#include "LZespolona.hh"
 #include <iostream>
 
 template<class TYP, int ROZMIAR>
+
 class Wektor {
+protected:
   TYP tab[ROZMIAR];
   
   public:

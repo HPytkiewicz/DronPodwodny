@@ -14,6 +14,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 #include <vector>
 #include <string>
 #include <iostream>
+#include "Wektor3D.hh"
 
 /*!
  * \file Draw3D_api_interface.hh
@@ -50,11 +51,20 @@ namespace drawNS {
      * \param z - z coord.
      */
     Point3D(double x, double y, double z) : data{x,y,z} {}
+
+    /*
+     *!
+     * \brief Constructor that copies values of Wektor3D
+     * \param W - Wektor3D
+     */
+    Point3D(const Wektor3D W): data{W[0], W[1], W[2]} {}
+    
     /*!
      * \brief Acess operator
      * \param ind - 0 for x coord, 1 for y, 2 for z.
      * \return value of coord.
      */
+    
     const double & operator[](uint ind) const {
       if (ind < 3)
 	return data[ind];

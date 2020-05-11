@@ -1,5 +1,4 @@
-#include "SWektor.hh"
-#include "LZespolona.hh"
+#include "Wektor.hh"
 #include <cmath>
 #include <iomanip>
 
@@ -91,17 +90,6 @@ double Wektor<TYP,ROZMIAR>::dlugosc() const{
   return sqrt(wynik);
 }
 
-template<>
-double Wektor<LZespolona,5>::dlugosc() const{
-  double wynik;
-  LZespolona pomoc;
-  for(int i=0;i<5;++i){
-    pomoc=(*this)[i]*(sprzezenie((*this)[i]));
-    wynik+=pomoc.re;
-  }
-  return sqrt(wynik);
-}
-
 // Porownanie wektorow (czy sa rowne)
 template<class TYP, int ROZMIAR>
 bool Wektor<TYP,ROZMIAR>::operator == (const Wektor<TYP,ROZMIAR> &Wektor2) const{
@@ -113,24 +101,12 @@ bool Wektor<TYP,ROZMIAR>::operator == (const Wektor<TYP,ROZMIAR> &Wektor2) const
   return true;
 }
 
-template<>
-bool Wektor<LZespolona,5>::operator == (const Wektor<LZespolona,5> &Wektor2) const{
-  for(int i=0;i<5;i++)
-    if((*this)[i]!=Wektor2[i])
-      return false;
-  return true;	       
-}
-
 // Porownanie wektorow (czy nie sa rowne)
 template<class TYP, int ROZMIAR>
 bool Wektor<TYP,ROZMIAR>::operator != (const Wektor<TYP,ROZMIAR> &Wektor2) const{
   return !((*this)==Wektor2);
 }
 
-template<>
-bool Wektor<LZespolona,5>::operator != (const Wektor<LZespolona,5> &Wektor2) const{
-  return !((*this)==Wektor2);
-}
 // Mnozenie liczby rzeczywistej razy wektor (odwrotna kolejnosc)
 template<class TYP, int ROZMIAR>
 Wektor<TYP,ROZMIAR> operator*(TYP a, const Wektor<TYP,ROZMIAR> & Wektor2){
